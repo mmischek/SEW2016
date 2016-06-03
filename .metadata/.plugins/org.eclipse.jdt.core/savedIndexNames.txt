@@ -1,0 +1,6 @@
+INDEX VERSION 1.127+/Users/Matthias/Desktop/SEW2016/.metadata/.plugins/org.eclipse.jdt.core
+332949024.index
+394799051.index
+423349590.index
+1714529684.index
+2133586659.index

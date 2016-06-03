@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>Temperature Converter</title>
+    </h:head>
+
+    <h:body>
+        <h:form>
+            <p:panel header="Temperature Converter">
+            
+            	<p:panelGrid colums="2">
+            		<h:outputText value="Temp: " />
+            		<p:inputText value="#{converter.convert}" />
+            	</p:panelGrid>
+            	
+            	<br />
+            	
+            	<p:commandButton value=" C->F" ajax="false"
+            		action="#{converter.celsiusToFahrenheit}" />
+            	<p:commandButton value=" F->C" ajax="false"
+            		action="#{converter.fahrenheitToCelsius}" />
+            	<p:commandButton value=" K->C" ajax="false"
+            		action="#{converter.kelvinToCelsius}" />
+            	<p:commandButton value=" K->F" ajax="false"
+            		action="#{converter.kelvinToFahrenheit}" />
+            	<p:commandButton value=" F->K" ajax="false"
+            		action="#{converter.fahrenheitToKelvin}" />
+            	<p:commandButton value=" K->C" ajax="false"
+            		action="#{converter.kelvinToCelsius}" />
+            	<p:commandButton value=" C->K" ajax="false"
+            		action="#{converter.celsiusToKelvin}" />
+            		
+            	<p:commandButton value="Reset" ajax="false"
+            		action="#{converter.reset}" />
+           
+            </p:panel>
+		</h:form>
+		<p:panel id="result" header="Result"
+			rendered="#{not converter.initial}">
+			<h:outputLabel value="#{converter.unit}: "></h:outputLabel>	
+			<h:outputLabel value="#{converter.converted}: "></h:outputLabel>	
+			
+		</p:panel>
+    </h:body>
+</html>
