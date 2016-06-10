@@ -1,0 +1,40 @@
+package headfirst.designpatterns.combining.observer;
+/**
+ * Klasse DecoyDuck 
+ * implementiert Quackable
+ * @author bethrobson
+ *
+ */
+public class DecoyDuck implements Quackable {
+	Observable observable;
+
+	/**
+	 * Konstruktor
+	 */
+	public DecoyDuck() {
+		observable = new Observable(this);
+	}
+ 
+	/**
+	 * Kann nicht quacken --> Silence wird ausgegeben
+	 */
+	public void quack() {
+		System.out.println("<< Silence >>");
+		notifyObservers();
+	}
+ 
+	/**
+	 * 
+	 */
+	public void registerObserver(Observer observer) {
+		observable.registerObserver(observer);
+	}
+
+	public void notifyObservers() {
+		observable.notifyObservers();
+	}
+ 
+	public String toString() {
+		return "Decoy Duck";
+	}
+}

@@ -20,7 +20,8 @@ public class Card {
 
 	private void init() {
 		result = 0;
-		// TODO left und right zufaellig befuellen
+		left = (int)(Math.random() * 50) + 1;
+		right = (int)(Math.random() * 50) + 1;// TODO left und right zufaellig befuellen
 		
 	}
 

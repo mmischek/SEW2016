@@ -1,0 +1,43 @@
+package headfirst.designpatterns.combining.observer;
+/**
+ * implementiert Quackable
+ * @author bethrobson
+ *
+ */
+public class DuckCall implements Quackable {
+	Observable observable;
+
+	/**
+	 * Konstruktur
+	 */
+	public DuckCall() {
+		observable = new Observable(this);
+	}
+	/**
+	 * ausgabe von Quack
+	 */
+	public void quack() {
+		System.out.println("Kwak");
+		notifyObservers();
+	}
+	
+	/**
+	 * neuer Observer wird erstellt
+	 */
+	public void registerObserver(Observer observer) {
+		observable.registerObserver(observer);
+	}
+
+	/**
+	 * jeder observer wird benachrichtigt
+	 */
+	public void notifyObservers() {
+		observable.notifyObservers();
+	}
+	/**
+	 * Duck Call wird als String zurückgegeben
+	 */
+	public String toString() {
+		return "Duck Call";
+	}
+}

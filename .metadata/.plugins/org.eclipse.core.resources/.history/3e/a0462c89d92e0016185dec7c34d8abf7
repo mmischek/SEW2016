@@ -1,0 +1,11 @@
+package headfirst.designpatterns.combining.observer;
+/**
+ * Observer Pattern
+ * interface
+ * own the update methode
+ * @author Matthias
+ *
+ */
+public interface Observer {
+	public void update(QuackObservable duck);
+}

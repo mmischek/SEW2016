@@ -1,0 +1,11 @@
+package headfirst.designpatterns.combining.observer;
+/**
+ * Adapter or Proxy Pattern
+ * interface
+ * own the quack method
+ * @author bethrobson
+ *
+ */
+public interface Quackable extends QuackObservable {
+	public void quack();
+}

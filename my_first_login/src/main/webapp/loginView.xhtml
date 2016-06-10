@@ -15,17 +15,15 @@
 			</p:layoutUnit>
 			<p:layoutUnit position="center" closable="false" minSize="100"
 				maxSize="250" collapsible="true">
-				<h:form>
-					<p:panelGrid columns="2">
-					<!-- TODO
-					outputLabel fuer msg.user
-					inputText fuer user.name inkl. LoginValidator
-					outputLabel fuer msg.password
-					inputSecret fuer user.password
-					 -->
-						
+				<h:form>				
+					<p:panelGrid columns="2">				
+          			<h:outputText value="#{msg.user}" />
+          			<p:inputText value="#{user.name}" />
+          			<h:outputLabel value="#{msg.password}" />
+          			<p:password value="#{user.password}"
+            			label="Password" required="true" />					
 					</p:panelGrid>
-					<!-- TODO commandButton mit Text msg.login, user.login wird aufgerufen -->
+					<p:commandButton value="#{msg.login}" action="#{user.login}"/>
 				</h:form>
 			</p:layoutUnit>
 		</p:layout>

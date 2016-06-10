@@ -1,0 +1,40 @@
+package headfirst.designpatterns.combining.observer;
+/**
+ * Klasse welche das Quaken der Enten zählt
+ * @author bethrobson
+ *
+ */
+public class CountingDuckFactory extends AbstractDuckFactory {
+  
+	/**
+	 * Methode um eine MallaradDuck zu erstellen
+	 * es wird der QuackCounter aufgerufen
+	 */
+	public Quackable createMallardDuck() {
+		return new QuackCounter(new MallardDuck());
+	}
+  
+	/**
+	 * Methode um eine RadheadDuck zu erstellen
+	 * es wird der QuackCounter aufgerufen
+	 */
+	public Quackable createRedheadDuck() {
+		return new QuackCounter(new RedheadDuck());
+	}
+	
+	/**
+	 * Methode um eine DuckCall zu erstellen
+	 * es wird der QuackCounter aufgerufen
+	 */
+	public Quackable createDuckCall() {
+		return new QuackCounter(new DuckCall());
+	}
+   
+	/**
+	 * Methode um eine RubberDuck zu erstellen
+	 * es wird der QuackCounter aufgerufen
+	 */
+	public Quackable createRubberDuck() {
+		return new QuackCounter(new RubberDuck());
+	}
+}
